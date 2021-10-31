@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>  
+    <title>Registration</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<link href="css/templatemo-style.css" rel="stylesheet">
+</head>
+
+<body class="light-gray-bg"> 
+
+	 <div th:if="${param.success}">
+        <div class="alert alert-info">You've successfully registered
+            to our awesome app!
+        </div>
+    </div>
+
+	<div class="templatemo-content-widget templatemo-login-widget white-bg">
+		<header class="text-center">
+	         <div class="square"></div>
+	         <h1>Registration</h1>
+	    </header>
+  
+    <form th:action="@{/registration}" th:object="${user}" method="post">
+        <div class="form-group">
+            <label for="firstName" class="control-label">First name</label> <input
+                required id="firstName" class="form-control" th:field="*{firstName}"/>
+        </div>
+        <div class="form-group">
+            <label for="lastName" class="control-label">Last name</label> <input
+                required id="lastName" class="form-control" th:field="*{lastName}"/>
+        </div>
+        <div class="form-group">
+            <label for="email" class="control-label">E-mail</label> <input
+                required id="email" class="form-control" th:field="*{email}"/>
+        </div>
+        <div class="form-group">
+            <label for="password" class="control-label">Password</label> <input
+                required id="password" class="form-control" type="password"
+                th:field="*{password}"/>
+        </div>
+        <div class="form-group">
+            <label for="age" class="control-label">Age</label> <input
+                required id="age" class="form-control"
+                th:field="*{age}"/>
+        </div>
+        
+         
+        <div class="form-group">
+            <label for="ville" class="control-label">Ville</label> <input
+                required id="ville" class="form-control" 
+                th:field="*{ville}"/>
+        </div>
+        <div class="form-group">
+            <label for="tel" class="control-label">Tel</label> <input
+                required id="tel" class="form-control"
+                th:field="*{tel}"/>
+        </div>
+        <button type="submit" class="btn btn-primary">
+            Register
+        </button>
+        <button onclick="toLogin()" class="btn btn-info" type="button" name="login-submit" id="login-submit">Log In
+        </button>
+
+    </form>
+</div>
+
+
+</body>
+<script type="text/javascript" th:src="@{/jquery-3.5.1.min.js/}"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+<script>
+    function toLogin() {
+        window.location.href = "/login";
+    }
+</script>
+</html>

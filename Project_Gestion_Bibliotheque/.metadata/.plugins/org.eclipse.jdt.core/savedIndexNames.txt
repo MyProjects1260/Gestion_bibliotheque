@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+C:\Users\zeyneb ben massoud\Documents\workspace-spring-tool-suite-4-4.7.0.RELEASE\Project_Gestion_Bibliotheque\.metadata\.plugins\org.eclipse.jdt.core
